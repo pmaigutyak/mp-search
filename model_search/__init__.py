@@ -5,7 +5,6 @@ import operator
 try:
     from functools import reduce
 except ImportError:
-    # In Python 2 reduce is in builtins
     pass
 
 from django.db.models import Q
@@ -42,7 +41,8 @@ def build_query(query_string, search_fields):
         operator.__and__,
         (reduce(
             operator.__or__,
-            (Q(**{"%s__icontains" % field_name: term}) for field_name in search_fields)
+            (Q(**{"%s__icontains" % field_name: term})
+             for field_name in search_fields)
         ) for term in terms),
     )
     return query
