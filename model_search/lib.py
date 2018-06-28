@@ -6,6 +6,11 @@ from django.apps import apps
 from django.conf import settings
 from django.db.models import Q
 
+try:
+    from functools import reduce
+except ImportError:
+    pass
+
 
 TERMS = re.compile(r'"([^"]+)"|(\S+)').findall
 NORM_SPACE = re.compile(r'\s{2,}').sub
