@@ -1,7 +1,8 @@
 
 from setuptools import setup, find_packages
 
-from model_search import __version__
+
+__version__ = '2.2'
 
 
 with open('requirements.txt') as f:
@@ -15,7 +16,6 @@ setup(
     name='django-model-search',
     version=__version__,
     description='Django search package',
-    long_description=open('README.md').read(),
     author='Paul Maigutyak',
     author_email='pmaigutyak@gmail.com',
     url=url,

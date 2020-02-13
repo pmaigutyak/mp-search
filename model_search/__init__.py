@@ -9,8 +9,6 @@ from model_search.lib import (
 
 __all__ = ['normalize_query', 'build_query', 'model_search']
 
-__version__ = '2.1'
-
 
 class ModelSearchConfig(AppConfig):
     name = 'model_search'
