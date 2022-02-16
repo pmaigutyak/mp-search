@@ -1,11 +1,7 @@
 
-from modeltranslation.translator import translator, TranslationOptions
+from modeltranslation.translator import translator
 
 from model_search.models import SearchTag
 
 
-class SearchTagTranslationOptions(TranslationOptions):
-    fields = ('text', )
-
-
-translator.register(SearchTag, SearchTagTranslationOptions)
+translator.register(SearchTag, fields=['text'])

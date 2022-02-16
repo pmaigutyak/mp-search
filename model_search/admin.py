@@ -12,6 +12,7 @@ class SearchTagInline(TranslationTabularInline):
     model = SearchTag
 
 
+@admin.register(SearchTagGroup)
 class SearchTagGroupAdmin(admin.ModelAdmin):
 
     inlines = [SearchTagInline]
@@ -25,11 +26,8 @@ class SearchTagGroupAdmin(admin.ModelAdmin):
     get_latest_tag_names.short_description = _('Latest tags')
 
 
+@admin.register(SearchQuery)
 class SearchQueryAdmin(admin.ModelAdmin):
 
     def has_add_permission(self, request):
         return False
-
-
-admin.site.register(SearchTagGroup, SearchTagGroupAdmin)
-admin.site.register(SearchQuery, SearchQueryAdmin)
